@@ -50,10 +50,22 @@ document.querySelector('#remove button').addEventListener('click', function () {
 
 document.querySelector('#reverse-squares button').addEventListener('click', function () {
   // TASK #6
+  var squares = document.querySelectorAll('.square')
+  var div = document.querySelector('#reverse-squares .answer-box')
+  var arr = Array.from(squares)
+  arr.reverse()
+  div.innerHTML = ''
+  arr.forEach(function (item) {
+    div.appendChild(item)
+  })
 })
 
 document.querySelector('#pig-latin button').addEventListener('click', function () {
   // TASK #7
+  var list = document.querySelectorAll('#tasks li')
+  list.forEach(function (item) {
+    item.textContent = item.textContent.split('').reverse().join('')
+  })
 })
 
 document.querySelector('#cycle-image button').addEventListener('click', function () {
