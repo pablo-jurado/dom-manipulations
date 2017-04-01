@@ -12,10 +12,32 @@ document.querySelector('#double button').addEventListener('click', function () {
 
 document.querySelector('#color-circle button').addEventListener('click', function () {
   // TASK #3
+  var circle = document.querySelector('#circle-bw')
+  if (circle.style.background === 'white' || circle.style.background === '') {
+    circle.style.background = 'black'
+  } else {
+    circle.style.background = 'white'
+  }
 })
 
 document.querySelector('#blow-up button').addEventListener('click', function () {
-  // TASK #4}
+  // TASK #4
+  var circleRed = document.querySelector('.circle-red')
+  var h = window.getComputedStyle(circleRed, null).getPropertyValue('height')
+  var w = window.getComputedStyle(circleRed, null).getPropertyValue('width')
+
+  var heightNum = parseInt(h)
+  var widthNum = parseInt(w)
+
+  if (heightNum !== 320) {
+    heightNum *= 2
+    widthNum *= 2
+  } else {
+    heightNum = 40
+    widthNum = 40
+  }
+  circleRed.style.height = heightNum + 'px'
+  circleRed.style.width = widthNum + 'px'
 })
 
 document.querySelector('#remove button').addEventListener('click', function () {
