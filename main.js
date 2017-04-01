@@ -42,6 +42,10 @@ document.querySelector('#blow-up button').addEventListener('click', function () 
 
 document.querySelector('#remove button').addEventListener('click', function () {
   // TASK #5
+  var liElInactive = document.querySelectorAll('.inactive')
+  liElInactive.forEach(function (item) {
+    item.remove()
+  })
 })
 
 document.querySelector('#reverse-squares button').addEventListener('click', function () {
