@@ -68,6 +68,13 @@ document.querySelector('#pig-latin button').addEventListener('click', function (
   })
 })
 
+var index = 1
+
 document.querySelector('#cycle-image button').addEventListener('click', function () {
   // TASK #8
+  var imgElement = document.querySelector('#city-img')
+  var newSrc = imgElement.src.slice(0, imgElement.src.length - 1)
+  index++
+  if (index === 10) index = 0
+  imgElement.src = newSrc + index
 })
